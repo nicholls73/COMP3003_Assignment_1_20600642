@@ -126,11 +126,6 @@ public class JFXArena extends Pane
         return wall;
     }
 
-    public void setWallDamaged(Wall wall) {
-        wall.setDamaged();
-        requestLayout();
-    }
-
     public void removeWall(Wall wall) {
         wallList.remove(wall);
         requestLayout();

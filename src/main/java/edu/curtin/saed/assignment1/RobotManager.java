@@ -341,9 +341,7 @@ public class RobotManager implements Runnable {
     */
     private void checkForTower(Robot robot) {
         if (robot.getX() == arena.getTower().getX() && robot.getY() == arena.getTower().getY()) {
-            Platform.runLater(() -> {
-                arena.killTower();
-            });
+            arena.killTower();
         }
     }
 
@@ -376,8 +374,8 @@ public class RobotManager implements Runnable {
             }
             // if the wall is not damaged and needs to be damaged
             else {
+                wall.setDamaged();
                 Platform.runLater(() -> {
-                    arena.setWallDamaged(wall);
                     logger.appendText("Robot " + robot.getId() + " damaged a wall at (" + robot.getX() + "," + robot.getY() + ")\n");
                 });
             }
