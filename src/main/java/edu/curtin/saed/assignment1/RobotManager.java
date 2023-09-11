@@ -76,7 +76,7 @@ public class RobotManager implements Runnable {
                 // while the robot is still alive and the game is not over
                 while (!robot.isKilled() && !gameOver) {
                     // sleep for a random amount of time of 500 - 2000, inclusively
-                    Thread.sleep(new Random().nextInt((1499) + 1) + 501);
+                    Thread.sleep(new Random().nextInt(1500) + 501);
                     moveRobot(robot);
                 }
             }
@@ -148,9 +148,9 @@ public class RobotManager implements Runnable {
         nextId++;
 
         while (!foundAvailableSpawn) {
-            // randomly choose a number between 1 and 4 inclusively
+            // randomly choose a number between 0 and 3 inclusively
             switch (new Random().nextInt(4)) {
-                case 1: // top left
+                case 0: // top left
                     if (!arena.hasRobot(0, 0)) {
                         newRobot.setCoords(0, 0);
                         Platform.runLater(() -> {
@@ -159,7 +159,7 @@ public class RobotManager implements Runnable {
                         foundAvailableSpawn = true;
                     }
                 break;
-                case 2: // top right
+                case 1: // top right
                     if (!arena.hasRobot(arena.getGridWidth() - 1, 0)) {
                         newRobot.setCoords(arena.getGridWidth() - 1, 0);
                         Platform.runLater(() -> {
@@ -168,7 +168,7 @@ public class RobotManager implements Runnable {
                         foundAvailableSpawn = true;
                     }
                 break;
-                case 3: // bottom left
+                case 2: // bottom left
                     if (!arena.hasRobot(0, arena.getGridHeight() - 1)) {
                         newRobot.setCoords(0, arena.getGridHeight() - 1);
                         Platform.runLater(() -> {
@@ -177,7 +177,7 @@ public class RobotManager implements Runnable {
                         foundAvailableSpawn = true;
                     }
                 break;
-                case 4: // bottom right
+                case 3: // bottom right
                     if (!arena.hasRobot(arena.getGridWidth() - 1, arena.getGridHeight() - 1)) {
                         newRobot.setCoords(arena.getGridWidth()- 1, arena.getGridHeight() - 1);
                         Platform.runLater(() -> {

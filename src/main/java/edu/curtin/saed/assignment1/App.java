@@ -83,7 +83,7 @@ public class App extends Application
     */
     private boolean isTenWalls(JFXArena arena, WallBuilder wallBuilder) {
         boolean isTenWalls = false;
-        int numOfWalls = arena.getNumOfWalls() + wallBuilder.getNumOfWallsInQueue();
+        int numOfWalls = arena.getNumOfWalls() + wallBuilder.getQueueSize();
         if (numOfWalls >= 10) {
             isTenWalls = true;
         }

@@ -32,6 +32,15 @@ public class WallBuilder implements Runnable {
         this.wallLabel = wallLabel;
     }
 
+    /*
+        NAME:       run
+        PURPOSE:    Is the method that the thread will run. It will poll the
+                    queue for walls and there is a wall, it will place it in
+                    the arena.
+        IMPORTS:    none
+        EXPORTS:    none
+        THROWS:     none
+    */
     @Override
     public void run() {
         try {
@@ -57,6 +66,14 @@ public class WallBuilder implements Runnable {
         }
     }
 
+    /*
+        NAME:       addWallToQueue
+        PURPOSE:    Using parsed in coordinates it will create a new wall and
+                    add it to the queue.
+        IMPORTS:    x (double), y (double)
+        EXPORTS:    none
+        THROWS:     InterruptedException
+    */
     public void addWallToQueue(double x, double y) throws InterruptedException {
         if (!alreadyQueued(x, y)) {
             wallQueue.put(new Wall(x, y));
@@ -64,10 +81,18 @@ public class WallBuilder implements Runnable {
         }
     }
     
-    public int getNumOfWallsInQueue() {
+    public int getQueueSize() {
         return wallQueue.size();
     }
 
+    /*
+        NAME:       alreadyQueued
+        PURPOSE:    Returns if there is already a wall queued at the parsed in
+                    coordinates.
+        IMPORTS:    x (double), y (double)
+        EXPORTS:    isQueued (boolean)
+        THROWS:     none
+    */
     private boolean alreadyQueued(double x, double y) {
         boolean isQueued = false;
 

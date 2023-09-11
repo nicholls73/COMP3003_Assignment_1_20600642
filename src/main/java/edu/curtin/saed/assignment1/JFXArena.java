@@ -52,17 +52,6 @@ public class JFXArena extends Pane
         canvas.heightProperty().bind(heightProperty());
         getChildren().add(canvas);
     }    
-    
-    /**
-     * Moves a robot image to a new grid position. This is highly rudimentary, as you will need
-     * many different robots in practice. This method currently just serves as a demonstration.
-     */
-    /*public void setRobotPosition(double x, double y)
-    {
-        robotX = x;
-        robotY = y;
-        requestLayout();
-    }*/
 
     public Tower getTower() {
         return tower;

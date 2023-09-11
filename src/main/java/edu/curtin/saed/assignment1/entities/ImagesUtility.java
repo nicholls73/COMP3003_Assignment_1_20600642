@@ -48,7 +48,7 @@ public class ImagesUtility {
         // distributable version of your code with './gradlew build'. The approach below is how a 
         // project is supposed to read its own internal resources, and should work both for 
         // './gradlew run' and './gradlew build'.)
-        try(InputStream is = getClass().getClassLoader().getResourceAsStream(imageStr))
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream(imageStr))
         {
             if(is == null)
             {

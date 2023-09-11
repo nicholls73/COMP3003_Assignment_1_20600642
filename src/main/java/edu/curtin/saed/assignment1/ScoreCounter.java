@@ -53,8 +53,7 @@ public class ScoreCounter implements Runnable {
                 }
             }
             Platform.runLater(() -> {
-                logger.appendText("Game Over!\n");
-                logger.appendText("Your Score is: " + score + "\n");
+                logger.appendText("GAME OVER!\nYour Score is: " + score + "\n");
             });
         }
         catch (InterruptedException error) {
@@ -69,7 +68,7 @@ public class ScoreCounter implements Runnable {
         EXPORTS:    none
         THROWS:     none
     */
-    public synchronized void robotDestroyed() {
+    public void robotDestroyed() {
         synchronized (mutex) {
             score += 100;
         }
