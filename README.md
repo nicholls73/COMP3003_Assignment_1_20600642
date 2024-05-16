@@ -1,8 +1,9 @@
 HOW TO RUN:
-  1. If in windows open PowerShell in the root folder of the project. (same folder that the gradlew file is in)
-  2. Type and enter:
+  1. Clone the repo.
+  2. If in windows open PowerShell in the root folder of the project. (same folder that the gradlew file is in)
+  3. Type and enter:
        ./gradlew run
-  3. It should open a window with the game.
+  4. It should open a window with the game.
 
 ABOUT THE GAME:
   Protect the castle in the middle from the robots. You can place walls down by clicking on squares,
